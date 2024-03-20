@@ -1,13 +1,18 @@
-import { FastifyPluginAsync, FastifyRequest, FastifyReply } from "fastify";
+import { FastifyPluginAsync } from "fastify";
 import path from "path";
 import fs from "fs";
-
-import * as error from "../structs/error";
 
 const pages: FastifyPluginAsync = async (app) => {
   app.get("/", (req, res) => {
     res.type("text/html");
     res.send(fs.readFileSync(path.join(__dirname, "../../public/index.html")));
+  });
+
+  app.get("/contact", (req, res) => {
+    res.type("text/html");
+    res.send(
+      fs.readFileSync(path.join(__dirname, "../../public/contact.html"))
+    );
   });
 
   // dot delete will break the server

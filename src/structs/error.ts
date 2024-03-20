@@ -2,17 +2,17 @@ import { FastifyRequest } from "fastify";
 
 // mehr brauchste eig net.
 
-export const method = (req: FastifyRequest) => {
+export const method = (req: FastifyRequest, expected: string) => {
   return {
-    error: `This resource cant be acceesed with the ${req.method} you used`,
-    code: 405,
-    originalUrl: req.originalUrl,
+    message: `Route ${expected}:/${req.originalUrl} cant be accessed with the method ${req.method}.`,
+    error: "Wrong Method",
+    statusCode: 405,
   };
 };
 
 export const not_found = (req: FastifyRequest) => {
   return {
-    message: `Router ${req.method}:${req.originalUrl} not found`,
+    message: `Route ${req.method}:${req.originalUrl} not found`,
     error: "Not Found",
     statusCode: 404,
   };
