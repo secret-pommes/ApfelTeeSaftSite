@@ -1,0 +1,37 @@
+{
+  "name": "apfelteesaftsite",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.ts",
+    "start": "node server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/secret-pommes/apfelteesaftsite.git"
+  },
+  "keywords": [
+    "Website",
+    "Fastify",
+    "Backend"
+  ],
+  "author": "not_secret1337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/secret-pommes/apfelteesaftsite/issues"
+  },
+  "homepage": "https://www.apfelteesaft.com",
+  "dependencies": {
+    "fastify": "^4.26.2",
+    "fastify-swagger": "^5.2.0",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2"
+  }
+}
